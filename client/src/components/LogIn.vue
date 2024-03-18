@@ -29,7 +29,8 @@ export default {
         if (response.data.error) {
           alert(response.data.error)
       } else {
-        localStorage.setItem("user-info", JSON.stringify(response.data))
+         //localStorage.setItem("user-info", JSON.stringify(response.data))
+        localStorage.setItem("accessToken", response.data.token)
         this.$router.push({ name: 'HomePage' })
       }
     } catch (error) {

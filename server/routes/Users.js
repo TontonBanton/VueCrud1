@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const { Users } = require('../models')
 const bcrypt = require('bcrypt')
+const { sign } = require('jsonwebtoken')
 
 router.get("/", async (req, res) => {
   const listOfUsers = await Users.findAll()
@@ -29,7 +30,9 @@ router.post('/login', async (req, res) => {
         if (!match) {
           res.json({ error: 'Wrong password' })
         } else {
+          const accessToken = sign({username: user.username, id: user.id}, "sekreto")
           res.json({
+            token: accessToken,
             username: user.username,
             email: user.email,
             password: user.password

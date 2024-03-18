@@ -39,7 +39,7 @@ export default {
 
 
   mounted() {
-    let user = localStorage.getItem("user-info")
+    let user = localStorage.getItem("accessToken")
     if (user){
       this.$router.push({ name: 'HomePage'})
     }
