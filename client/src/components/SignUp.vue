@@ -37,7 +37,6 @@ export default {
     }
   },
 
-
   mounted() {
     let user = localStorage.getItem("accessToken")
     if (user){

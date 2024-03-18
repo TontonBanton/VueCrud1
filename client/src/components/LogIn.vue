@@ -21,7 +21,6 @@ export default {
   },
 
   methods: {
-
     async logIn() {
     const logInfo = { email: this.email, password: this.password }
     try {
@@ -38,6 +37,13 @@ export default {
     }
     }
 
+  },
+
+  mounted() {
+    let user = localStorage.getItem("accessToken")
+    if (user){
+      this.$router.push({ name: 'HomePage'})
+    }
   }
 
 }
