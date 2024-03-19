@@ -1,6 +1,5 @@
 <template>
   <img  class= "logo" alt="Sodaco logo" src="../assets/sodaco.png">
-  <h1>Log In Template</h1>
   <div class="login">
     <input type="text" placeholder="Enter Email" v-model="email" />
     <input type="password" placeholder="Enter Password" v-model="password" />
@@ -28,8 +27,8 @@ export default {
         if (response.data.error) {
           alert(response.data.error)
       } else {
-         //localStorage.setItem("user-info", JSON.stringify(response.data))
-        localStorage.setItem("accessToken", response.data.token)
+         //localStorage.setItem("accessToken", JSON.stringify(response.data))
+        localStorage.setItem("accessToken", response.data.token + JSON.stringify(response.data.username))
         this.$router.push({ name: 'HomePage' })
       }
     } catch (error) {

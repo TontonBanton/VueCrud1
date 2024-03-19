@@ -1,26 +1,32 @@
 <template>
   <div class="nav">
-    <a href="#">Home</a>
-    <a href="#">Add Vehicle</a>
-    <a href="#">Update Vehicle</a>
-    <a href="#">Logout</a>
+    <router-link to="/">Home</router-link>
+    <router-link to="addvehicle">Add Vehicle</router-link>
+    <router-link to="updatevehicle">Update Vehicle</router-link>
+    <a href="#" v-on:click="logout">Logout</a>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'HeaderPage'
+    name: 'HeaderPage',
+    methods: {
+      logout() {
+        localStorage.clear()
+        this.$router.push({ name:'LogIn' })
+      }
+    }
   }
 </script>
 
 <style>
 .nav {
-  background-color: black;
+  background-color: green;
   overflow: hidden;
 }
 .nav a {
   float: left;
-  color: green;
+  color: whitesmoke;
   padding: 15px;
   text-align: center;
   font-size: 15px;
@@ -29,7 +35,7 @@
 
 }
 .nav a:hover {
-  background: gray;
+  background: black;
   color: white;
 }
 

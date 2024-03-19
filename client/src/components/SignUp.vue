@@ -1,6 +1,5 @@
 <template>
   <img  class= "logo" alt="Sodaco logo" src="../assets/sodaco.png">
-  <h1>Sign Up Template</h1>
   <div class="register">
     <input type="text" placeholder="Enter Name" v-model="username"/>
     <input type="text" placeholder="Enter Email" v-model="email" />

@@ -24,7 +24,8 @@ body {
 }
 
 .logo {
-  width: 100px
+  width: 100px;
+  margin-top: 20px;
 }
 
 .register input, .login input {
@@ -32,7 +33,7 @@ body {
   width: 300px;
   height: 40px;
   padding-left: 20px;
-  margin-bottom: 30px;
+  margin: 20px;
   margin-right: auto;
   margin-left: auto;
   border: 1px solid green;
