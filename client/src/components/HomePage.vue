@@ -1,6 +1,6 @@
 <template>
   <HeaderPage />
-  <h2>{{ name }}</h2>
+  <h2>Welcome: {{ name }}</h2>
   <img  class= "logo" alt="Sodaco logo" src="../assets/sodaco.png">
 </template>
 
@@ -21,20 +21,16 @@ export default {
     if (!user){
       this.$router.push({ name: 'LogIn'})
     } else {
-      const tokenWithJson = user
-      const parts = tokenWithJson.split('"');
-      //const jwt = parts[0].trim();
-      const jsonPayload = parts.slice(1).join('"').trim();
-      // Parse the JSON payload
-      try {
-        const payloadObject = JSON.parse(jsonPayload);
-        this.name = payloadObject.username;
-      } catch (error) {
-        console.error('Error parsing JSON payload:', error);
-      }
+
+      //Get UserName from the token
+      const parts = user.split('"')               // Splits token into array " as the delimeter
+      const username = parts[parts.length - 2]    // Extract the 2nd item on the array [ jwtsekreto " username " _ ]
+
+      // Capitalize the first letter
+      const CapName = username[0].toUpperCase() + username.slice(1);  //Capitalize 1stletter + rest of the string start w/ 2ndletter
+      this.name = CapName
+
     }
-
-
   }
 
 }
