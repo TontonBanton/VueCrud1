@@ -22,13 +22,12 @@ export default {
       this.$router.push({ name: 'LogIn'})
     } else {
 
-      //Get UserName from the token
+      //GET USERNAME FROM TOKEN
       const parts = user.split('"')               // Splits token into array " as the delimeter
       const username = parts[parts.length - 2]    // Extract the 2nd item on the array [ jwtsekreto " username " _ ]
 
       // Capitalize the first letter
-      const CapName = username[0].toUpperCase() + username.slice(1);  //Capitalize 1stletter + rest of the string start w/ 2ndletter
-      this.name = CapName
+      this.name = username[0].toUpperCase() + username.slice(1) // Capitalize 1stletter + rest of the string start w/ 2ndletter
 
     }
   }

@@ -1,20 +1,23 @@
 module.exports = (sequelize, DataTypes) => {
 
-  const Users = sequelize.define("Users", {
-    username:{
+  const Vehicles = sequelize.define("Vehicles", {
+    brand:{
       type: DataTypes.STRING,
       allownull: false
     },
-    email:{
+    model:{
       type: DataTypes.STRING,
       allownull: false
     },
-    password:{
+    plateno:{
+      type: DataTypes.STRING,
+      allownull: false
+    },
+    photo:{
       type: DataTypes.STRING,
       allownull: false
     }
   })
 
-   return Users
+   return Vehicles
 }
-
