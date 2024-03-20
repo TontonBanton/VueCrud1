@@ -19,13 +19,18 @@ export default {
   color: #2c3e50;
 }
 body {
-  padding:0;
+  padding: 0;
+  margin-top: 0;
+}
+h2 {
+  text-align: left;
+  padding: 5px;
   margin: 0;
 }
-
 .logo {
   width: 100px;
-  margin-top: 20px;
+  margin-top: 10px;
+  border: 1px solid green;
 }
 
 .register input, .login input {
