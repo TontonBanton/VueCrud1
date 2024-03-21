@@ -9,39 +9,39 @@
     </p>
   </div>
 </template>
-s
+
 <script>
 import axios from 'axios';
 
 export default {
   nanme: 'LogIn',
+
   data() {
-    return {email: '', password: ''}
-  },
-
-  methods: {
-    async logIn() {
-    const logInfo = { email: this.email, password: this.password }
-    try {
-      const response = await axios.post("http://localhost:3001/users/login", logInfo)
-        if (response.data.error) {
-          alert(response.data.error)
-      } else {
-         //localStorage.setItem("accessToken", JSON.stringify(response.data))
-        localStorage.setItem("accessToken", response.data.token + JSON.stringify(response.data.username))
-        this.$router.push({ name: 'HomePage' })
-      }
-    } catch (error) {
-      alert(error.message)
-    }
-    }
-
+    return { email: '', password: '' }
   },
 
   mounted() {
     let user = localStorage.getItem("accessToken")
     if (user){
       this.$router.push({ name: 'HomePage'})
+    }
+  },
+
+  methods: {
+    async logIn() {
+      const logInfo = { email: this.email, password: this.password }
+      try {
+        const response = await axios.post("http://localhost:3001/users/login", logInfo)
+        if (response.data.error) {
+          alert(response.data.error)
+        } else {
+          //localStorage.setItem("accessToken", JSON.stringify(response.data))
+          localStorage.setItem("accessToken", response.data.token + JSON.stringify(response.data.username))
+          this.$router.push({ name: 'HomePage' })
+        }
+      } catch (error) {
+        alert(error.message)
+      }
     }
   }
 

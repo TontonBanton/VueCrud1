@@ -18,7 +18,14 @@ export default {
   name: 'SignUp',
 
   data() {
-    return { username: '', email: '',password: '' }
+    return { username: '', email: '', password: '' }
+  },
+
+  mounted() {
+    let user = localStorage.getItem("accessToken")
+    if (user){
+      this.$router.push({ name: 'HomePage'})
+    }
   },
 
   methods: {
@@ -34,19 +41,10 @@ export default {
         alert(error.message)
       }
     }
-  },
-
-  mounted() {
-    let user = localStorage.getItem("accessToken")
-    if (user){
-      this.$router.push({ name: 'HomePage'})
-    }
   }
 
 }
 
 </script>
 
-<style>
-
-</style>
+<style></style>

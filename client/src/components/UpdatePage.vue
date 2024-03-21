@@ -6,6 +6,7 @@
 
 <script>
 import HeaderPage from './HeaderPage.vue'
+
 export default {
   name: 'UpdatePage',
 

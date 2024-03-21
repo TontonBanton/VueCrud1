@@ -4,7 +4,11 @@ const { Vehicles } = require('../models')
 
 
 router.get("/", async (req, res) => {
-  const listOfVehicles = await Vehicles.findAll()
+  const listOfVehicles = await Vehicles.findAll({
+    order: [
+      [ 'brand', 'ASC' ]
+    ]
+  })
   res.json(listOfVehicles)
 })
 

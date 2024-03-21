@@ -14,6 +14,7 @@
     </tr>
   </table>
 
+
 </template>
 
 <script>
@@ -22,15 +23,13 @@ import axios from 'axios'
 
 export default {
   name: 'HomePage',
-  data(){
-    return {
-      username: '',
-      vehicles: []
-    }
-  },
 
   components: {
     HeaderPage
+  },
+
+  data() {
+    return { username: '', vehicles: [] }
   },
 
   async mounted() {
@@ -38,7 +37,6 @@ export default {
     if (!user){
       this.$router.push({ name: 'LogIn'})
     } else {
-
       //GET USERNAME FROM TOKEN
       const parts = user.split('"')               // Splits token into array " as the delimeter
       const username = parts[parts.length - 2]    // Extract the 2nd item on the array [ jwtsekreto " username " _ ]

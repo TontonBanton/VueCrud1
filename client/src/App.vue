@@ -33,7 +33,7 @@ h2 {
   border: 1px solid green;
 }
 
-.register input, .login input {
+.register input, .login input, .add input {
   display: block;
   width: 300px;
   height: 40px;
@@ -43,7 +43,7 @@ h2 {
   margin-left: auto;
   border: 1px solid green;
 }
-.register button, .login button {
+.register button, .login button, .add button {
   width: 320px;
   height: 40px;
   border: 1px solid green;
