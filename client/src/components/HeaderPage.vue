@@ -6,7 +6,10 @@
       <router-link to="updatevehicle">UPDATE</router-link>
       <a href="#" v-on:click="logout">LOG OUT</a>
     </div>
-  <img class="logo" alt="Sodaco logo" src="../assets/sodaco.png">
+    <div class="right-items">
+      <h4 class="user">User : {{ username }} </h4>
+      <img class="logo" alt="Sodaco logo" src="../assets/sodaco.png">
+    </div>
   </div>
 </template>
 
@@ -14,6 +17,20 @@
 
 export default {
   name: 'HeaderPage',
+
+  data() {
+    return { username: '' }
+  },
+
+  mounted() {
+    let user = localStorage.getItem("accessToken")
+    if (user) {
+      //GET USERNAME FROM TOKEN
+      const parts = user.split('"')                                   // Splits token into array " as the delimeter
+      const username = parts[parts.length - 2]                        // Extract the 2nd item on the array [ jwtsekreto " username " _ ]
+      this.username = username[0].toUpperCase() + username.slice(1)   // Capitalize 1stletter + rest of the string start w/ 2ndletter
+    }
+  },
 
   methods: {
     logout() {
@@ -26,38 +43,5 @@ export default {
 </script>
 
 <style>
-.nav {
-  background-color: green;
-  overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.nav a {
-  float: left;
-  color: whitesmoke;
-  padding: 15px;
-  text-align: center;
-  height: 15px;
-  text-decoration: none;
-  /*border: 1px solid black */
-}
-.nav a:hover {
-  background: black;
-  color: white;
-}
-
-.left-items {
-  display: flex;
-  gap: 5px;
-  /*border: 1px solid black */
-}
-.nav .logo {
-  margin-top: 0;
-  max-width: 45px;
-  max-height: 40px;
-  padding: 5px;
-  border: 1px solid black
-}
-
+  @import '../assets/css/header.css';
 </style>

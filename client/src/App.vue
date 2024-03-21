@@ -11,45 +11,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-body {
-  padding: 0;
-  margin-top: 0;
-}
-h2 {
-  text-align: left;
-  padding: 5px;
-  margin: 0;
-}
-.logo {
-  width: 100px;
-  margin-top: 10px;
-  border: 1px solid green;
-}
-
-.register input, .login input, .add input {
-  display: block;
-  width: 300px;
-  height: 40px;
-  padding-left: 20px;
-  margin: 20px;
-  margin-right: auto;
-  margin-left: auto;
-  border: 1px solid green;
-}
-.register button, .login button, .add button {
-  width: 320px;
-  height: 40px;
-  border: 1px solid green;
-  background: green;
-  color: white;
-  cursor: pointer;
-}
-
+  @import './assets/css/global.css'
 </style>

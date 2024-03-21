@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style>
-form {
-  margin: 20px;
-}
+  .add {
+    margin: 50px;
+  }
 </style>
