@@ -5,7 +5,7 @@
       <td>{{ item.brand }}</td>
       <td>{{ item.model }}</td>
       <td>{{ item.plateno }}</td>
-      <td><img :src="require('@/assets/' + item.photo)" alt="Vehicle Photo"></td>
+      <td><img :src="require('../assets/' + item.photo)" alt="Vehicle Photo"></td>
     </tr>
   </table>
 
