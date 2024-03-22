@@ -10,6 +10,7 @@
 
 <script>
 import HeaderPage from './HeaderPage.vue'
+import axios from 'axios'
 
 export default {
   name: 'AddPage',
@@ -32,8 +33,21 @@ export default {
   },
 
   methods: {
-    addVehicle() {
-      console.log(this.Vehicle)
+
+    async addVehicle() {
+      const vehicleInfo = { brand: this.Vehicle.brand, model: this.Vehicle.model,  plateno: this.Vehicle.plateno }
+      const userAccess = { headers: { accessToken: localStorage.getItem("accessToken") }}
+      try {
+        const response = await axios.post("http://localhost:3001/vehicles", vehicleInfo, userAccess)
+        if (response.data.error) {
+          console.log(response.data.error)
+        } else {
+          this.$router.push({ name: 'HomePage' })
+        }
+      } catch (error) {
+        console.log("error brad hahaha")
+      }
+
     }
   }
 }

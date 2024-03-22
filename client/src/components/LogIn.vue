@@ -36,7 +36,8 @@ export default {
           alert(response.data.error)
         } else {
           //localStorage.setItem("accessToken", JSON.stringify(response.data))
-          localStorage.setItem("accessToken", response.data.token + JSON.stringify(response.data.username))
+          //localStorage.setItem("accessToken", response.data.token + JSON.stringify(response.data.username))
+          localStorage.setItem("accessToken", response.data.token)
           this.$router.push({ name: 'HomePage' })
         }
       } catch (error) {

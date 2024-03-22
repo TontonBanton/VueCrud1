@@ -1,9 +1,6 @@
 <template>
   <HeaderPage />
   <table border="1">
-    <tr>
-      <!-- <td>Brand</td><td>Model</td><td>Plate No.</td><td>Photo</td> -->
-    </tr>
     <tr v-for="item in vehicles" :key="item.id">
       <td>{{ item.brand }}</td>
       <td>{{ item.model }}</td>
@@ -11,7 +8,6 @@
       <td><img :src="require('@/assets/' + item.photo)" alt="Vehicle Photo"></td>
     </tr>
   </table>
-
 
 </template>
 

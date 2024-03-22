@@ -3,6 +3,7 @@ import SignUp from "./components/SignUp.vue"
 import LogIn from "./components/LogIn.vue"
 import AddPage from "./components/AddPage.vue";
 import UpdatePage from "./components/UpdatePage.vue";
+import NotFound from "./components/NotFound";
 import { createRouter, createWebHashHistory} from "vue-router"
 
 const routes = [
@@ -32,6 +33,11 @@ const routes = [
     name: 'UpdatePage',
     component: UpdatePage,
     path:'/updatevehicle'
+  },
+  {
+    component: NotFound,
+    path: '/:catchAll(.*)'
+
   }
 ]
 

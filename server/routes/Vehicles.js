@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const { Vehicles } = require('../models')
+const { validateToken } = require('../middlewares/AuthMiddleware')
 
 
 router.get("/", async (req, res) => {
@@ -11,6 +12,12 @@ router.get("/", async (req, res) => {
   })
   res.json(listOfVehicles)
 })
+
+router.post("/", validateToken ,async (req, res) => {
+  const newVehicle = req.body
+  await Vehicles.create(newVehicle)
+  res.json(newVehicle);
+});
 
 
 module.exports = router
