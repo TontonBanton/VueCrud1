@@ -17,7 +17,6 @@ h2 {
 .logo {
   width: 100px;
   margin-top: 10px;
-  border: 1px solid green;
 }
 
 .register input, .login input, .add input {

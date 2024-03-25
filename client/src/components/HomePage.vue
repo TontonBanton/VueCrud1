@@ -6,6 +6,7 @@
       <td>{{ item.model }}</td>
       <td>{{ item.plateno }}</td>
       <td><img :src="require('../assets/' + item.photo)" alt="Vehicle Photo"></td>
+      <td><router-link :to="'/updatevehicle/' + item.id">UPDATE</router-link></td>
     </tr>
   </table>
 
@@ -43,7 +44,7 @@ export default {
 <style>
 table {
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 80px;
   margin-left: auto;
   margin-right: auto;
 }

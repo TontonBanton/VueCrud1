@@ -78,6 +78,6 @@ export default {
 
 <style>
   .add {
-    margin: 50px;
+    margin: 100px;
   }
 </style>

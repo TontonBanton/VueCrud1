@@ -2,8 +2,7 @@
   <div class="nav">
     <div class="left-items">
       <router-link to="/">HOME</router-link>
-      <router-link to="addvehicle">ADD</router-link>
-      <router-link to="updatevehicle">UPDATE</router-link>
+      <router-link to="/addvehicle">ADD</router-link>
       <a href="#" v-on:click="logout">LOG OUT</a>
     </div>
     <div class="right-items">

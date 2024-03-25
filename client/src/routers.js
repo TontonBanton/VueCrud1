@@ -32,7 +32,7 @@ const routes = [
   {
     name: 'UpdatePage',
     component: UpdatePage,
-    path:'/updatevehicle'
+    path:'/updatevehicle/:id'
   },
   {
     component: NotFound,
