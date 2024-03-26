@@ -52,7 +52,6 @@ export default {
         alert('Please fill out all fields.')
         return
       }
-
       const vehicleInfo = {
         brand: this.Vehicle.brand,
         model: this.Vehicle.model,

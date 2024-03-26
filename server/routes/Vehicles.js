@@ -25,12 +25,17 @@ router.get('/byid/:id', async (req, res) => {
   res.json(vehicle)
 })
 
-
-router.put('/byid/:id', async (req, res) => {
+router.put('/byid/:id', validateToken, async (req, res) => {
   const id = req.params.id
   const { brand, model, plateno } = req.body
   const editVehicle = await Vehicles.update( {brand: brand, model: model, plateno: plateno}, { where:{id:id}} )
   res.json(editVehicle);
+});
+
+router.delete('/byid/:id', validateToken ,async (req, res) => {
+  const id = req.params.id
+  const delVehicle = await Vehicles.destroy({ where:{id:id}} )
+  res.json(delVehicle);
 });
 
 module.exports = router
