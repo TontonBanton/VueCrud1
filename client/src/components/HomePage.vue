@@ -1,6 +1,6 @@
 <template>
   <HeaderPage />
-  <table border="1">
+  <!--<table border="1">
     <tr v-for="item in vehicles" :key="item.id">
       <td>{{ item.brand }}</td>
       <td>{{ item.model }}</td>
@@ -11,7 +11,21 @@
         <button v-on:click="confirmDelete(item.id)">REMOVE</button>
       </td>
     </tr>
-  </table>
+  </table>-->
+
+  <div class="vehicle-container">
+  <div v-for="item in vehicles" :key="item.id" class="vehicle-box">
+    <img @dblclick="alertItemId(item.id)" :src="require('../assets/' + item.photo)" alt="Vehicle Photo">
+    <div class="brand-model">
+      <span>{{ item.brand }}</span><span>{{ item.model }}</span>
+    </div>
+    <div><b>{{ item.plateno }}</b></div>
+    <div class="updel">
+      <router-link :to="'/updatevehicle/' + item.id">UPDATE</router-link>
+      <button @click="confirmDelete(item.id)">REMOVE</button>
+    </div>
+  </div>
+</div>
 
 </template>
 
@@ -41,6 +55,10 @@ export default {
   },
 
   methods: {
+    alertItemId(itemId) {
+     alert(itemId);
+    },
+
     async confirmDelete(id) {
       const confirmed = window.confirm("Are you sure you want to delete this vehicle?");
         if (confirmed) {
@@ -49,6 +67,7 @@ export default {
           alert("Deletion canceled");
         }
     },
+
     async deleteVehicle(id) {
       const userAccess = { headers: { accessToken: localStorage.getItem("accessToken") }}
       try {

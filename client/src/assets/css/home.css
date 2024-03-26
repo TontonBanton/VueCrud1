@@ -1,3 +1,4 @@
+/* TABLE */
 table {
   border-collapse: collapse;
   margin-top: 80px;
@@ -18,4 +19,45 @@ td button {
   font-size: 12px;
   margin: 10px;
   width: 100px;
+}
+
+/* USING CONTAINER BOX */
+.vehicle-container {
+  margin: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Adjust the spacing between boxes */
+}
+
+.vehicle-box {
+  flex: 1; /* Make each box grow to fill the available space equally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  /* border: solid green 1px; */
+}
+
+.brand-model {
+  width: 100%;
+  margin-bottom: 5px;
+}
+.brand-model span {
+  margin: 3px;
+}
+
+.updel {
+  width: 100%;
+  margin-top: auto; /* Push the element to the bottom */
+}
+.updel a, button {
+  margin: 6px;
+}
+.vehicle-box img {
+  padding: 5px;
+  max-width: 180px;
+  max-height: 80px;
+}
+.vehicle-box img:hover {
+  filter: brightness(80%); /* Adjust the brightness to change the color */
 }
